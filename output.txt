@@ -1,0 +1,8 @@
+{SOPORTE}-{8256}-{[HRMobile] - No se muestra el campo departamento para algunos empleados}
+{SOPORTE}-{8481}-{[HRMobile] - Revisar exception diaria por timeout}
+{SOPORTE}-{8481}-{[HRMobile] - Revisar exception diaria por timeout}
+{EVOLUTIVO}-{8470}-{Visualización pre-publicación}
+{EVOLUTIVO}-{8470}-{Visualización pre-publicación}
+{EVOLUTIVO}-{8493}-{[HRMobile] - Analizar exception de unique key}
+{SOPORTE}-{8481}-{[HRMobile] - Revisar exception diaria por timeout}
+{SOPORTE}-{8256}-{[HRMobile] - No se muestra el campo departamento para algunos empleados}
