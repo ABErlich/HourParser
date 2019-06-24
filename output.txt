@@ -1,8 +1,3 @@
-{SOPORTE}-{8256}-{[HRMobile] - No se muestra el campo departamento para algunos empleados}
-{SOPORTE}-{8481}-{[HRMobile] - Revisar exception diaria por timeout}
-{SOPORTE}-{8481}-{[HRMobile] - Revisar exception diaria por timeout}
-{EVOLUTIVO}-{8470}-{Visualización pre-publicación}
-{EVOLUTIVO}-{8470}-{Visualización pre-publicación}
-{EVOLUTIVO}-{8493}-{[HRMobile] - Analizar exception de unique key}
-{SOPORTE}-{8481}-{[HRMobile] - Revisar exception diaria por timeout}
-{SOPORTE}-{8256}-{[HRMobile] - No se muestra el campo departamento para algunos empleados}
+{EVOLUTIVO}-{8701}-{[CMASSMobile] - Soporte supervisores y causas}
+Estimacion y analisis
+{EVOLUTIVO}-{8652}-{Cuando uno entra al Risk Register, que el listado aparezca prefiltrado por Status: Open +Watchlist}

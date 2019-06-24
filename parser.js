@@ -15,10 +15,12 @@ getDescription = function(line){
 }
 
 mapType = function(type){
-    if(type === "Requirement"){
+    if(type === "Requirement" || type === "Task"){
         return "{EVOLUTIVO}"
     }else if (type === "Bug"){
         return "{SOPORTE}"
+    }else{
+        throw new Error("Tipo desconocido");
     }
 }
 
@@ -48,6 +50,7 @@ module.exports = function(){
 
         }catch(error){
             console.log("Error de parseo en la linea:", line);
+            return line;
         }
     }
 
