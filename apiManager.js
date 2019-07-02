@@ -38,7 +38,6 @@ module.exports = function() {
             });
             
             req.on('error', (error) => {
-                console.error(error)
                 reject(error);
             });
             
@@ -87,13 +86,11 @@ module.exports = function() {
                 res.on('end',function(){
                     var obj = JSON.parse(data);
 
-                    console.log(obj.data);
-                    resolve(obj.data);
+                    resolve(obj);
                 })
             });
             
             req.on('error', (error) => {
-                console.error(error)
                 reject(error);
             });
             

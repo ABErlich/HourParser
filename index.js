@@ -4,18 +4,24 @@ const em = require('./eventManager');
 const api = require('./apiManager');
 const configs = require('./config');
 const Hours = require('./models/hours');
+const excelManager = require('./excelManager');
 
 
-api.login(configs.USER, configs.PASS).then((token) => {
+var line = excelManager.readLine(configs.EXCEL_NAME, "Julio", 3);
+var outputline = parser.processLine(line.req);
 
-    console.log("LOGGEADO CORRECTAMENTE");
+// api.login(configs.USER, configs.PASS).then((token) => {
 
-    var h = new Hours(43, 5, new Date(), 1, "HRMobile", 35, "comentario");
+//     console.log("LOGGEADO CORRECTAMENTE");
 
-    api.loadHours(h, token).then((res) => {
+//     var line = excelManager.readLine(configs.EXCEL_NAME, "Julio", 2);
 
-    });
-});
+//     var h = new Hours(43, 5, new Date(), 1, "HRMobile", 35, "comentario");
+
+//     api.loadHours(h, token).then((res) => {
+
+//     });
+// });
 
 //
 
