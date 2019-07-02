@@ -2,10 +2,22 @@ const fileManager = require('./fileManager');
 const parser = require('./parser');
 const em = require('./eventManager');
 const api = require('./apiManager');
-const configs = require('./config')
+const configs = require('./config');
+const Hours = require('./models/hours');
 
-api.login(configs.USER, configs.PASS);
 
+api.login(configs.USER, configs.PASS).then((token) => {
+
+    console.log("LOGGEADO CORRECTAMENTE");
+
+    var h = new Hours(43, 5, new Date(), 1, "HRMobile", 35, "comentario");
+
+    api.loadHours(h, token).then((res) => {
+
+    });
+});
+
+//
 
 // em.registerListener('lineRead', function(data){
 //     var outputline = parser.processLine(data);
@@ -14,4 +26,3 @@ api.login(configs.USER, configs.PASS);
 // })
 
 // fileManager.readFileLines("input.txt")
-
