@@ -28,8 +28,18 @@ module.exports = function() {
 
     }
 
+    lineIsEmpty = function(excelName, sheet, line){
+        var workbook = xlsx.readFile(excelName);
+        var worksheet = workbook.Sheets[sheet];
+
+        var cell = worksheet['A' + line];
+        
+        return cell ? false : true;
+    }
+
     return {
-        readLine: readLine
+        readLine: readLine,
+        lineIsEmpty: lineIsEmpty
     }
 
 }();

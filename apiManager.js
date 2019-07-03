@@ -54,7 +54,7 @@ module.exports = function() {
         const data = JSON.stringify({
             analyticId: hours.analitica,
             categoryId: hours.categoria,
-            date: "2019-07-01T03:00:00.000Z",//hours.fecha,
+            date: hours.fecha.toISOString(),
             hours: hours.hours,
             id: 0,
             reference: hours.referencia,
@@ -74,7 +74,7 @@ module.exports = function() {
             }
         }
 
-        return new Promise(function(resolve, reject){
+        return new Promise(function(resolve, reject) {
             const req = https.request(options, (res) => {
                 console.log(`statusCode: ${res.statusCode}`)
                 var data = '';
