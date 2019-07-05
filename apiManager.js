@@ -79,7 +79,7 @@ module.exports = function() {
 
         return new Promise(function(resolve, reject) {
             const req = https.request(options, (res) => {
-                console.log(`statusCode: ${res.statusCode}`);
+                
                 var data = '';
             
                 res.on('data', (chunk) => {
@@ -89,6 +89,10 @@ module.exports = function() {
                 res.on('end',function(){
                     var obj = JSON.parse(data);
 
+                    if(res.statusCode == 200){
+                        console.log(`Horas del dia: ${hours.fecha.toLocaleDateString()} cargadas con exito`);
+                    }
+                    
                     resolve(obj);
                 })
             });
