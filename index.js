@@ -1,10 +1,11 @@
 const parser = require('./parser');
 const api = require('./apiManager');
-const configs = require('./config');
+const configs = require('./configs/config');
 const Hours = require('./models/hours');
 const excelManager = require('./excelManager');
 
 
+// Me logeo y obtengo un token
 api.login(configs.USER, configs.PASS).then((token) => {
 
     console.log("LOGGEADO CORRECTAMENTE");
@@ -28,13 +29,3 @@ api.login(configs.USER, configs.PASS).then((token) => {
 
     
 });
-
-
-
-// em.registerListener('lineRead', function(data){
-//     var outputline = parser.processLine(data);
-
-//     fileManager.writeToFile("output.txt", outputline);
-// })
-
-// fileManager.readFileLines("input.txt")

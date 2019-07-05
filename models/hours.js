@@ -1,9 +1,11 @@
+const constants = require('../configs/constants');
+
 class Hours {
-    constructor(fecha, hours, referencia, comentario, tarea, analitica, categoria){
-        this.analitica = analitica || "43"; // Techint MOA
-        this.categoria = categoria || "5";  // Proyectos
-        this.tarea = tarea || "21"; // Construccion-Desarrollo
-        this.referencia = referencia; // Nombre del proyecto
+    constructor(fecha, hours, referencia, comentario, tarea, categoria, analitica){
+        this.analitica = analitica || constants.ANALITICA.TECHINT_MOA;
+        this.categoria = categoria || constants.CATEGORIAS.PROYECTOS;
+        this.tarea = tarea || constants.TAREAS.CONSTRUCCION_DESARROLLO;
+        this.referencia = referencia;
         this.fecha = fecha;
         this.comentario = comentario;
         this.hours = hours;

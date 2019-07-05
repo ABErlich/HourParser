@@ -1,6 +1,6 @@
 const https = require('https');
 const Hours = require('./models/hours');
-const utf8 = require('utf8');
+const configs = require('./configs/config');
 
 module.exports = function() {
 
@@ -13,8 +13,8 @@ module.exports = function() {
         })
           
         const options = {
-            host: 'azgap01wp-web.azurewebsites.net',
-            path: '/api/login',
+            host: configs.HOST,
+            path: configs.LOGIN_ENDPOINT,
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json; charset=utf-8',
@@ -52,6 +52,7 @@ module.exports = function() {
 
     loadHours = async function(hours, token) {
 
+        // Armo el payload
         const data = JSON.stringify({
             analyticId: hours.analitica,
             categoryId: hours.categoria,
@@ -63,12 +64,11 @@ module.exports = function() {
             taskId: hours.tarea,
             userComment: hours.comentario
         });
-
-        console.log(data);
           
+        // Request
         const options = {
-            host: 'azgap01wp-web.azurewebsites.net',
-            path: '/api/worktimes',
+            host: configs.HOST,
+            path: configs.HOURS_ENDPOINT,
             method: 'POST',
             headers: {
                 'Accept': 'application/json, text/plain, */*',
@@ -77,6 +77,7 @@ module.exports = function() {
             }
         }
 
+        // Hago el request y lo meto en una promesa
         return new Promise(function(resolve, reject) {
             const req = https.request(options, (res) => {
                 
@@ -104,7 +105,7 @@ module.exports = function() {
             req.write(data);
             req.end();
             
-        })
+        });
     }
 
     return {
