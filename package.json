@@ -9,6 +9,7 @@
   "author": "aerlich",
   "license": "ISC",
   "dependencies": {
+    "utf8": "^3.0.0",
     "xlsx": "^0.14.3"
   },
   "devDependencies": {

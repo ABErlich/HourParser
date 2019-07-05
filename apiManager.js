@@ -1,5 +1,6 @@
 const https = require('https');
 const Hours = require('./models/hours');
+const utf8 = require('utf8');
 
 module.exports = function() {
 
@@ -16,7 +17,7 @@ module.exports = function() {
             path: '/api/login',
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json',
+                'Content-Type': 'application/json; charset=utf-8',
                 'Content-Length': data.length
             }
         }
@@ -62,21 +63,23 @@ module.exports = function() {
             taskId: hours.tarea,
             userComment: hours.comentario
         });
+
+        console.log(data);
           
         const options = {
             host: 'azgap01wp-web.azurewebsites.net',
             path: '/api/worktimes',
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json',
-                'Content-Length': data.length,
-                'Authorization': 'Bearer ' + token
+                'Accept': 'application/json, text/plain, */*',
+                'Authorization': 'Bearer ' + token,
+                'Content-Type': 'application/json; charset=utf-8'
             }
         }
 
         return new Promise(function(resolve, reject) {
             const req = https.request(options, (res) => {
-                console.log(`statusCode: ${res.statusCode}`)
+                console.log(`statusCode: ${res.statusCode}`);
                 var data = '';
             
                 res.on('data', (chunk) => {
@@ -96,7 +99,7 @@ module.exports = function() {
             
             req.write(data);
             req.end();
-
+            
         })
     }
 
