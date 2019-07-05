@@ -12,7 +12,7 @@ Forma de uso:
 2) Completar el template de horas con los datos
 3) Crear un archivo ".env" en el directorio principal que contenga la informacion de usuario y contraseña de gaps, por ejemplo:
 
-USER=myuser@domain.com.ar
+USER=myuser@domain.com.ar </br>
 PASS=myhashedpassword
 
 el password hasheado hay que obtenerlo de un request usando gaps
