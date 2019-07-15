@@ -49,8 +49,10 @@ module.exports = function(){
             return type + "-" + number + "-" + description;
 
         }catch(error){
-            console.log("Error de parseo en la linea:", line);
-            return line;
+            console.log("No se pudo parsear la linea:", line);
+
+            // Formato por defecto
+            return "{SOPORTE}-{ST}-{" + line + "}";
         }
     }
 
