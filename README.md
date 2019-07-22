@@ -17,5 +17,5 @@ PASS=myhashedpassword
 
 el password hasheado hay que obtenerlo de un request usando gaps
 
-4) node index.js
+4) Ejecutar el comando: node index.js
 5) Las horas se cargan en gaps usando la api
