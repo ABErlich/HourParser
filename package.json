@@ -9,7 +9,7 @@
   "author": "aerlich",
   "license": "ISC",
   "dependencies": {
-    "xlsx": "^0.14.3"
+    "xlsx": "^0.17.0"
   },
   "devDependencies": {
     "dotenv": "^8.0.0"
